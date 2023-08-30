@@ -1,7 +1,8 @@
 class GameOfLife {
 
     enum class CellState{
-        ALIVE
+        ALIVE,
+        DEAD
     }
 
     class Cell (private var cellState: CellState) {
