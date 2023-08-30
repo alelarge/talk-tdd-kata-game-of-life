@@ -5,8 +5,9 @@ class GameOfLife {
     }
 
     class Cell (private var cellState: CellState) {
+        private var state = cellState
         fun isAlive() : Boolean {
-            return TODO("Provide the return value")
+            return state == CellState.ALIVE
         }
     }
 
