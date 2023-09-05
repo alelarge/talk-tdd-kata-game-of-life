@@ -13,11 +13,10 @@ class GameOfLife {
         }
 
         fun evolve(neighbours: List<Cell>) {
-            val liveNeighbours = neighbours.count { it.state == CellState.ALIVE }
-            if (liveNeighbours < 2 || liveNeighbours > 3) {
+            val numLiveNeighbours = neighbours.count { it.state == CellState.ALIVE }
+            if (numLiveNeighbours < 2 || numLiveNeighbours > 3) {
                 state = CellState.DEAD
             }
         }
-
     }
 }
