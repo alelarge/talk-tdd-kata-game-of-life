@@ -1,11 +1,11 @@
 class GameOfLife {
 
-    enum class CellState{
+    enum class CellState {
         ALIVE,
         DEAD
     }
 
-    class Cell (cellState: CellState) {
+    class Cell(cellState: CellState) {
 
         private var state = cellState
         fun isAlive(): Boolean {
@@ -13,8 +13,8 @@ class GameOfLife {
         }
 
         fun evolve(neighbours: List<Cell>) {
-            val liveNeighbours = neighbours.count {it.state == CellState.ALIVE}
-            if (liveNeighbours < 2) {
+            val liveNeighbours = neighbours.count { it.state == CellState.ALIVE }
+            if (liveNeighbours < 2 || liveNeighbours > 3) {
                 state = CellState.DEAD
             }
         }
