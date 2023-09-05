@@ -21,4 +21,15 @@ class GameOfLifeTest {
         aliveCell.evolve(neighbours)
         assertThat(aliveCell.isAlive()).isFalse
     }
+
+    @Test
+    fun `cell dies when it has more than 3 live neighbors`() {
+        val aliveCell = GameOfLife.Cell(GameOfLife.CellState.ALIVE)
+        val neighbours = listOf(GameOfLife.Cell(GameOfLife.CellState.ALIVE),
+            GameOfLife.Cell(GameOfLife.CellState.ALIVE), GameOfLife.Cell(GameOfLife.CellState.ALIVE),
+            GameOfLife.Cell(GameOfLife.CellState.ALIVE)
+        )
+        aliveCell.evolve(neighbours)
+        assertThat(aliveCell.isAlive()).isFalse
+    }
 }
