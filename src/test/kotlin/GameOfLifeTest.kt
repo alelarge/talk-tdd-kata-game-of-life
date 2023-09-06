@@ -80,3 +80,9 @@ class CellTest {
         assertThat(expectedNeighbours.toSet()).isEqualTo(cellNeighbourPositions.toSet())
     }
 }
+
+
+
+
+
+
