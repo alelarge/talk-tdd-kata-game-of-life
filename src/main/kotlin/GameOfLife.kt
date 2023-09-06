@@ -10,6 +10,10 @@ class Game {
     private val grid: Grid
     private var aliveCell: List<Position>
 
+    fun getCellState(position: Position) {
+
+    }
+
     fun isOver() : Boolean {
         if (aliveCell.isEmpty()) {
             return true

@@ -1,7 +1,9 @@
 class Cell(cellState: CellState) {
 
         private var state = cellState
-        fun isAlive(): Boolean {
+
+
+    fun isAlive(): Boolean {
             return state == CellState.ALIVE
         }
 
