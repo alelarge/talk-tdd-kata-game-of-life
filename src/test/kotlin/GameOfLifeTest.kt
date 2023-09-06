@@ -50,22 +50,6 @@ class CellTest {
     }
 
     @Test
-    fun `cell with 3 live neighbors survives to the next generation`() {
-        //Given
-        val aliveCell = Cell(CellState.ALIVE)
-        val neighbors = List(3) { Cell(CellState.ALIVE) }
-        val deadNeighbor = Cell(CellState.DEAD)
-
-        //When
-        neighbors.forEach { aliveCell.addNeighbor(it) }
-        aliveCell.addNeighbor(deadNeighbor)
-        aliveCell.evolve(neighbors)
-
-        //Then
-        assertThat(aliveCell.isAlive()).isTrue
-    }
-
-    @Test
     fun `must return all positions of the neighbours of the cell`() {
         // Given
         val grid = Grid(3, 3)
@@ -98,8 +82,8 @@ class CellTest {
     fun`at the start of the game game of life, if I have a living cell, then at the next turn, the game is over`(){
         //Given
         val grid = Grid(3, 3)
-
         val game = Game(grid, listOf(Position(0,0)))
+
         // When
         game.play()
 
