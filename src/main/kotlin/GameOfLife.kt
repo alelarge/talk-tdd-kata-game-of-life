@@ -10,7 +10,11 @@ class Game {
     private val grid: Grid
     private var aliveCell: List<Position>
 
-    fun isOver(): Boolean {
-        return true
+    fun isOver() : Boolean {
+        if (aliveCell.isEmpty()) {
+            return true
+        } else {
+            return false
+        }
     }
 }
