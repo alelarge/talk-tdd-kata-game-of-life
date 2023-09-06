@@ -1,4 +1,4 @@
-class Grid(internal val rows: Int, private val cols: Int) {
+class Grid(private val rows: Int, private val cols: Int) {
     private var currentPosition = Position(0, 0)
 
     fun hasNext(): Boolean {

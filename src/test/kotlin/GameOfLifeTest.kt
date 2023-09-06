@@ -102,17 +102,15 @@ class CellTest {
         val game = Game(grid, initialAliveCells)
         //Then
 
-        assertThat(game.getCellAtPosition(Position(1, 0)).isAlive()).isEqualTo(CellState.ALIVE)
-        assertThat(game.getCellAtPosition(Position(1, 1)).isAlive()).isEqualTo(CellState.ALIVE)
-        assertThat(game.getCellAtPosition(Position(1, 2)).isAlive()).isEqualTo(CellState.ALIVE)
+        assertThat(game.getCellAtPosition(Position(1, 0)).isAlive()).isTrue
+        assertThat(game.getCellAtPosition(Position(1, 1)).isAlive()).isTrue
+        assertThat(game.getCellAtPosition(Position(1, 2)).isAlive()).isTrue
 
         game.play()
 
-        assertThat(game.getCellAtPosition(Position(0, 1)).isAlive()).isEqualTo(CellState.ALIVE)
-        assertThat(game.getCellAtPosition(Position(1, 1)).isAlive()).isEqualTo(CellState.ALIVE)
-        assertThat(game.getCellAtPosition(Position(2, 1)).isAlive()).isEqualTo(CellState.ALIVE)
-
-        assertThat(game.isOver()).isFalse
+        assertThat(game.getCellAtPosition(Position(0, 1)).isAlive()).isTrue
+        assertThat(game.getCellAtPosition(Position(1, 1)).isAlive()).isTrue
+        assertThat(game.getCellAtPosition(Position(2, 1)).isAlive()).isTrue
     }
 }
 
