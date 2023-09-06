@@ -90,6 +90,30 @@ class CellTest {
         //Then
         assertThat(game.isOver()).isTrue
     }
+
+    @Test
+    fun `horizontal cells evolve into vertical cells in the next generation`() {
+        //Given
+        val grid = Grid(3, 3)
+        val initialAliveCells = listOf(
+            Position(1, 0), Position(1, 1), Position(1, 2)
+        )
+        //When
+        val game = Game(grid, initialAliveCells)
+        //Then
+
+        assertThat(game.getCellState(Position(1, 0))).isEqualTo(CellState.ALIVE)
+        assertThat(game.getCellState(Position(1, 1))).isEqualTo(CellState.ALIVE)
+        assertThat(game.getCellState(Position(1, 2))).isEqualTo(CellState.ALIVE)
+
+        game.play()
+
+        assertThat(game.getCellState(Position(0, 1))).isEqualTo(CellState.ALIVE)
+        assertThat(game.getCellState(Position(1, 1))).isEqualTo(CellState.ALIVE)
+        assertThat(game.getCellState(Position(2, 1))).isEqualTo(CellState.ALIVE)
+
+        assertThat(game.isOver()).isFalse
+    }
 }
 
 
