@@ -52,9 +52,9 @@ class GameOfLifeTest {
     @Test
     fun `cell with 3 live neighbors survives to the next generation`() {
         //Given
-        val aliveCell = Cell(CellState.ALIVE)
-        val neighbors = List(3) { Cell(CellState.ALIVE) }
-        val deadNeighbor = Cell(CellState.DEAD)
+        val aliveCell = GameOfLife.Cell(GameOfLife.CellState.ALIVE)
+        val neighbors = List(3) { GameOfLife.Cell(GameOfLife.CellState.ALIVE) }
+        val deadNeighbor = GameOfLife.Cell(GameOfLife.CellState.DEAD)
 
         //When
         neighbors.forEach { aliveCell.addNeighbor(it) }

@@ -31,5 +31,9 @@ class GameOfLife {
                 }
             }
         }
+
+        fun addNeighbor(it: GameOfLife.Cell) {
+        }
+
     }
 }
