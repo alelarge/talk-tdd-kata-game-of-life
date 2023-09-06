@@ -93,6 +93,19 @@ class CellTest {
         val game = Game(grid, listOf(Position(0,0)))
         assertThat(game.isOver()).isFalse
     }
+
+    @Test
+    fun`at the start of the game game of life, if I have a living cell, then at the next turn, the game is over`(){
+        //Given
+        val grid = Grid(3, 3)
+
+        val game = Game(grid, listOf(Position(0,0)))
+        // When
+        game.play()
+
+        //Then
+        assertThat(game.isOver()).isTrue
+    }
 }
 
 
