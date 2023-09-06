@@ -112,6 +112,29 @@ class CellTest {
         assertThat(game.getCellAtPosition(Position(1, 1)).isAlive()).isTrue
         assertThat(game.getCellAtPosition(Position(2, 1)).isAlive()).isTrue
     }
+
+    @Test
+    fun `horizontal cells evolve back into horizontal cells in 2 generations`() {
+        //Given
+        val grid = Grid(3, 3)
+        val initialAliveCells = listOf(
+            Position(1, 0), Position(1, 1), Position(1, 2)
+        )
+        //When
+        val game = Game(grid, initialAliveCells)
+        //Then
+
+        assertThat(game.getCellAtPosition(Position(1, 0)).isAlive()).isTrue
+        assertThat(game.getCellAtPosition(Position(1, 1)).isAlive()).isTrue
+        assertThat(game.getCellAtPosition(Position(1, 2)).isAlive()).isTrue
+
+        game.play()
+        game.play()
+
+        assertThat(game.getCellAtPosition(Position(1, 0)).isAlive()).isTrue
+        assertThat(game.getCellAtPosition(Position(1, 1)).isAlive()).isTrue
+        assertThat(game.getCellAtPosition(Position(1, 2)).isAlive()).isTrue
+    }
 }
 
 
