@@ -10,10 +10,6 @@ class Game {
     private val grid: Grid
     private var aliveCell: List<Position>
 
-    fun getCellState(position: Position) {
-
-    }
-
     fun isOver() : Boolean {
         if (aliveCell.isEmpty()) {
             return true
@@ -36,7 +32,7 @@ class Game {
         aliveCell = aliveCellPositionForCurrentTurn
     }
 
-    private fun getCellAtPosition(position: Position): Cell{
+    fun getCellAtPosition(position: Position): Cell{
         if(aliveCell.contains(position)){
             return Cell(CellState.ALIVE)
         } else {
