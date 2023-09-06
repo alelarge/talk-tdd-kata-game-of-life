@@ -8,6 +8,7 @@ class GameOfLife {
     class Cell(cellState: CellState) {
 
         private var state = cellState
+        private val neighbors = mutableListOf<Cell>()
         fun isAlive(): Boolean {
             return state == CellState.ALIVE
         }
@@ -32,7 +33,8 @@ class GameOfLife {
             }
         }
 
-        fun addNeighbor(it: GameOfLife.Cell) {
+        fun addNeighbor(neighbor: Cell) {
+            neighbors.add(neighbor)
         }
 
     }
