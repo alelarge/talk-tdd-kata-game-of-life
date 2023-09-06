@@ -1,7 +1,6 @@
 class Cell(cellState: CellState) {
 
         private var state = cellState
-        private val neighbors = mutableListOf<Cell>()
         fun isAlive(): Boolean {
             return state == CellState.ALIVE
         }
@@ -24,8 +23,5 @@ class Cell(cellState: CellState) {
                     }
                 }
             }
-        }
-        fun addNeighbor(neighbor: Cell) {
-            neighbors.add(neighbor)
         }
     }
