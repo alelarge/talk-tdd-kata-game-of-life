@@ -17,4 +17,8 @@ class Game {
             return false
         }
     }
+
+    fun play(){
+
+    }
 }
