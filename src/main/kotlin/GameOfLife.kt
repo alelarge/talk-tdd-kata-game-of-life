@@ -30,6 +30,7 @@ class Game {
             }
         }
         aliveCell = aliveCellPositionForCurrentTurn
+        grid.reset()
     }
 
     fun getCellAtPosition(position: Position): Cell{
