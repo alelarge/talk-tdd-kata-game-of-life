@@ -4,7 +4,6 @@ class Grid(private val rows: Int, private val cols: Int) {
 
     fun hasNext(): Boolean {
         return currentPosition.x < rows && currentPosition.y < cols
-
     }
 
     fun next(): Position {
@@ -19,7 +18,6 @@ class Grid(private val rows: Int, private val cols: Int) {
             currentPosition.y = 0
             currentPosition.x++
         }
-
         return position
     }
 
