@@ -129,8 +129,8 @@ class CellTest {
         assertThat(game.getCellAtPosition(Position(1, 2)).isAlive()).isTrue
 
         game.play()
-        game.play()
         grid.reset()
+        game.play()
 
         assertThat(game.getCellAtPosition(Position(1, 0)).isAlive()).isTrue
         assertThat(game.getCellAtPosition(Position(1, 1)).isAlive()).isTrue

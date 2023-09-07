@@ -1,16 +1,9 @@
 class Grid(private val rows: Int, private val cols: Int) {
-/*
-    private var currentPosition = Position(0, 0)
-*/
     private var currentPosition = Position(0, 0)
     private var isInitialized = false
 
     fun hasNext(): Boolean {
-/*
         return currentPosition.x < rows && currentPosition.y < cols
-
-*/
-        return isInitialized && (currentPosition.x < rows && currentPosition.y < cols)
 
     }
 
